@@ -1212,3 +1212,26 @@ document.querySelectorAll("img").forEach(img => {
 /* ==========================================================
    END OF FILE
 ========================================================== */
+
+// ================================
+// Google Analytics APK Tracking
+// ================================
+
+function trackDownload(buttonId) {
+    const btn = document.getElementById(buttonId);
+
+    if (btn) {
+        btn.addEventListener("click", function () {
+
+            gtag("event", "apk_download", {
+                button_name: buttonId,
+                app_name: "Radhe Naam Jap"
+            });
+
+        });
+    }
+}
+
+trackDownload("downloadButton");
+trackDownload("heroDownload");
+trackDownload("downloadApk");
